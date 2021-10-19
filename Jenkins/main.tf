@@ -38,10 +38,10 @@ data "azurerm_resource_group" "myresourcegroup" {
   name = "${var.prefix}-jenkins"
 }
 
-data "azurerm_image" "docker-image" {
-  name                = "samg-Docker"
-  resource_group_name = data.azurerm_resource_group.myresourcegroup.name
-}
+#data "azurerm_image" "docker-image" {
+#  name                = "samg-Docker"
+#  resource_group_name = data.azurerm_resource_group.myresourcegroup.name
+#}
 
 resource "azurerm_virtual_network" "vnet" {
   name                = "${var.prefix}-vnet"
