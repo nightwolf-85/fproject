@@ -1,6 +1,6 @@
 variable "DB_USER" {
   default = "mongodb_user"
-  description = "mongodb username"
+  description = "wmongodb username"
 }
 
 variable "DB_PASSWORD" {
