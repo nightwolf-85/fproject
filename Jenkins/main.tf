@@ -16,7 +16,7 @@ provider "azurerm" {
 }
 
 locals {
-  se-region = "AMER - Canada"
+  se-region = "East US"
   ttl       = "-1"
   terraform = "true"
 }
