@@ -109,7 +109,7 @@ resource "azurerm_public_ip" "jenkins-pip" {
   domain_name_label   = "${var.prefix}-jenkins"
 }
 
-resource "azurerm_Windows_virtual_machine" "jenkins" {
+resource "azurerm_windows_virtual_machine" "jenkins" {
   name                = "${var.prefix}-jenkins"
   location            = var.location
   resource_group_name = data.azurerm_resource_group.myresourcegroup.name
