@@ -109,12 +109,12 @@ resource "azurerm_public_ip" "jenkins-pip" {
   domain_name_label   = "${var.prefix}-jenkins"
 }
 
-resource "azurerm_linux_virtual_machine" "jenkins" {
+resource "azurerm_Windows_virtual_machine" "jenkins" {
   name                = "${var.prefix}-jenkins"
   location            = var.location
   resource_group_name = data.azurerm_resource_group.myresourcegroup.name
   size                = var.vm_size
-  admin_username      = "adminuser"
+  admin_username      = "projectadmin"
 
   tags = local.common_tags
   
@@ -126,9 +126,9 @@ resource "azurerm_linux_virtual_machine" "jenkins" {
   }
 
     source_image_reference {
-        publisher = "Canonical"
-        offer     = "UbuntuServer"
-        sku       = "18.04-LTS"
+        publisher = "MicrosoftWindowsServer"
+        offer     = "WindowsServer"
+        sku       = "2019-Datacenter"
         version   = "latest"
     }
   os_disk {
