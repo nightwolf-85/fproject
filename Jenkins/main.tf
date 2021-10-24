@@ -129,8 +129,12 @@ resource "azurerm_linux_virtual_machine" "jenkins" {
     public_key = file("id_rsa.pub")
   }
 
-  source_image_id = data.azurerm_image.docker-image.id
-
+    source_image_reference {
+        publisher = "Canonical"
+        offer     = "UbuntuServer"
+        sku       = "18.04-LTS"
+        version   = "latest"
+    }
   os_disk {
     name                  = "${var.prefix}-osdisk"
     storage_account_type  = "Standard_LRS"
